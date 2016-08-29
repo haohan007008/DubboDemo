@@ -11,6 +11,9 @@
 	<dubbo:registry protocol="zookeeper" address="zookeeper://192.168.220.171:2181" /> 
 	
 	<dubbo:reference id="demoService"  
-        interface="com.howbuy.fp.DemoService" group="fdc-das"  protocol="dubbo"/>  
+        interface="com.howbuy.fp.DemoService" group="fdc-das"  protocol="dubbo" check="false">
+        <dubbo:method name="sayHello"/>
+    	<dubbo:method name="sayBye" async="true" />
+    </dubbo:reference>
      				         				        
 </beans>        
