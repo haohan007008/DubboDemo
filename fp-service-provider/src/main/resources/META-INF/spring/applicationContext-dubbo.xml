@@ -15,6 +15,6 @@
 	<bean id="demoService" class="com.howbuy.fp.DemoServiceImpl" /> 
    	<!-- 声明需要暴漏的接口 -->
     <dubbo:service interface="com.howbuy.fp.DemoService" owner="meng.lv"
-    	ref="demoService" timeout="3600000" group="fdc-das"  protocol="dubbo">
+    	ref="demoService" timeout="3600000" group="fdc-das"  protocol="dubbo" loadbalance="roundrobin">
    	</dubbo:service>			         				        
 </beans>        

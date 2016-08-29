@@ -10,11 +10,11 @@
     <!-- 测试zk地址 -->
 	<dubbo:registry protocol="zookeeper" address="zookeeper://192.168.220.171:2181" /> 
 	<!-- 用dubbo协议在20511端口暴露服务 -->   
-    <dubbo:protocol name="dubbo" port="20515" /> 
+    <dubbo:protocol name="dubbo" port="20516" /> 
 	<!-- bean -->    
 	<bean id="demoService" class="com.howbuy.fp.DemoServiceImpl" /> 
    	<!-- 声明需要暴漏的接口 -->
     <dubbo:service interface="com.howbuy.fp.DemoService" owner="meng.lv"
-    	ref="demoService" timeout="3600000" group="fdc-das"  protocol="dubbo">
+    	ref="demoService" timeout="3600000" group="fdc-das"  protocol="dubbo" loadbalance="roundrobin">
    	</dubbo:service>			         				        
 </beans>        
